@@ -6,12 +6,7 @@ Blog::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
-#  devise_scope :user do
-#    match '/sign_up', :to => 'sessions#registrations/new'
-#    match '/sign_in', :to => 'sessions#new'
-#    match '/sign_out', :to => 'sessions#destroy'
-#  end
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
