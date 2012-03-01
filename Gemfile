@@ -15,7 +15,9 @@ gem 'russian'
 gem 'devise'
 
 group :development do
+  gem 'faker', '0.3.1'
   gem 'rspec-rails'
+  gem "ruby-debug19"
 end
 
 

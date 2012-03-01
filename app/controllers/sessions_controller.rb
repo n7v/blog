@@ -1,9 +1,11 @@
 class SessionsController < Devise::SessionsController
 
-  before_filter :authenticate_user!, :except => [:new]
+  before_filter :authenticate_user!, :except => [:new, :create]
+  
+  def create
+  end
   
   def new
-    super
   end
   
   def destroy

@@ -6,5 +6,9 @@ class UsersController < ApplicationController
   def new
     @title = "Регистрация"
   end
+  
+  def show
+    @title = "Информация о пользователе"
+  end
 
 end

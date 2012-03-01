@@ -1,7 +1,14 @@
 Blog::Application.routes.draw do
+  
   devise_for :users, :controllers => {:sessions => 'sessions'}
-
-  root :to => 'pages#home'
+  
+  root :to => 'posts#index'
+  
+  
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :posts
+  
   
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
