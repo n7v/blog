@@ -1,4 +1,17 @@
 Blog::Application.routes.draw do
+  devise_for :users, :controllers => {:sessions => 'sessions'}
+
+  root :to => 'pages#home'
+  
+  match '/contact', :to => 'pages#contact'
+  match '/about', :to => 'pages#about'
+  match '/help', :to => 'pages#help'
+#  devise_scope :user do
+#    match '/sign_up', :to => 'sessions#registrations/new'
+#    match '/sign_in', :to => 'sessions#new'
+#    match '/sign_out', :to => 'sessions#destroy'
+#  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +61,7 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+
 
   # See how all your routes lay out with "rake routes"
 

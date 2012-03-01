@@ -6,6 +6,17 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'execjs'
+gem 'therubyracer'
+gem 'gravatar_image_tag'
+gem 'will_paginate'
+gem 'i18n'
+gem 'russian'
+gem 'devise'
+
+group :development do
+  gem 'rspec-rails'
+end
 
 
 # Gems used only for assets and not required
@@ -30,4 +41,6 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'rspec-rails'
+  gem 'webrat'
 end
