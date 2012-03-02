@@ -1,6 +1,7 @@
 <h2>Вход</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="debug"><%= resource_name %> <%=  session_path(resource_name)  %> </div><br />
   <div><%= f.label :email %><br />
     <%= f.email_field :email %></div>
 

@@ -1,12 +1,12 @@
 Blog::Application.routes.draw do
   
-  devise_for :users, :controllers => {:sessions => 'sessions'}
+  devise_for :users
   
   root :to => 'posts#index'
   
   
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  #resources :sessions, :only => [:new, :create, :destroy]
   resources :posts
   
   
