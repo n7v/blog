@@ -27,7 +27,7 @@ namespace :db do
     
     User.all.each do |user|
       rand(3).times do
-        user.posts.create!(:content => Faker::Lorem.sentence(5))
+        user.posts.create!(:content => Faker::Lorem.sentences(10))
       end
     end
   end
