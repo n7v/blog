@@ -3,7 +3,6 @@
 class PagesController < ApplicationController
   def home
     @title = "Главная"
-    @posts = Post.paginate(:page => params[:page])
   end
 
   def contact
