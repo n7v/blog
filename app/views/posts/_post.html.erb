@@ -1,19 +1,10 @@
-<tr class="post">
-  <td>
-  <span class="title">
-    <%= post.title %>
-  </span>
-  <span class="content">
-    <pre><%= post_content_cut(post.content) %></pre>
-  </span>
-  <span class="post_bar">
-    <span class="gravatar">
-      <%= link_to gravatar_for(post.user, :size=>13), post.user %>
+<div class="post round">
+    <span class="title">
+      <%= link_to post.title, post %>
+    </span><br/>
+    <span class="content">
+      <%= raw post_content_cut(post.content) %>
+      <%= link_to "читать", post %>
     </span>
-    <span class="author">
-      <%= link_to post.user.name, post.user %>
-    </span>
-    <span class="timestamp"><%= time_ago_in_words(post.created_at) %> назад</span>
-  </span>
-  </td>
-</tr>
+</div>
+<%= render 'post_bar', :post => post %>

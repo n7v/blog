@@ -9,6 +9,12 @@ class UsersController < ApplicationController
   
   def show
     @title = "Информация о пользователе"
+    @user = User.find(params[:id])
+  end
+  
+  def index
+    @title = "Список пользователей"
+    @users = User.paginate(:page => params[:page])
   end
 
 end

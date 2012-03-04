@@ -17,10 +17,10 @@ class PostsController < ApplicationController
   def create
     @post  = current_user.posts.build(params[:post])
     if @post.save
-      flash[:success] = "Сообщение создано!"
+      flash[:success] = "Запись создана!"
       redirect_to root_path
     else
-      flash[:error] = "Не удалось создать сообщение!"
+      flash[:error] = "Не удалось создать запись!"
     end
   end
   
@@ -30,6 +30,12 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    @title = @post.title
+    if current_user.nil?
+      @new_comment = @post.comments.new
+    else
+      @new_comment = current_user.comments.new(:post_id => @post[:id])
+    end
   end
   
 end

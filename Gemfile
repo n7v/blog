@@ -13,6 +13,7 @@ gem 'will_paginate'
 gem 'i18n'
 gem 'russian'
 gem 'devise'
+gem 'truncate_html'
 
 group :development do
   gem 'faker', '0.3.1'

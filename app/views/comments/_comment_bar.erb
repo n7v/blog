@@ -1,0 +1,10 @@
+<span class="gravatar">
+  <%= gravatar_for comment.user, :size=>"15px" %>
+</span>
+<span class="author">
+  <%= if comment.user.nil? then "Anonymouse" else
+    link_to comment.user.name, comment.user end %>
+</span>
+<span class="timestamp">
+  <%= time_ago_in_words(comment.created_at) %> назад
+</span>

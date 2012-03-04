@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<div class="post round">
+  <%= raw sanitize(@post.content) %>
+</div>
+
+<%= render 'post_bar', :post => @post %>
+
+<div id = "comments">
+  <%= render "shared/comment_form" %>
+  <%= render @post.comments %>
+</div>

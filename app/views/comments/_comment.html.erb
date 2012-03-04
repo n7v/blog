@@ -1,0 +1,10 @@
+<% if comment.created_at != nil  %>
+  <div class="comment">
+    <div class="comment_bar">
+      <%= render 'comments/comment_bar', :comment => comment %>
+    </div>
+    <div class="content">
+      <%= raw sanitize(comment.content) %>
+    </div>
+  </div>
+<% end %>

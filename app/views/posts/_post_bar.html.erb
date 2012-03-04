@@ -1,0 +1,15 @@
+<div class="post_bar round">
+  <span class="gravatar">
+    <%= link_to gravatar_for(post.user, :size=>13), post.user %>
+  </span>
+  <span class="author">
+    <%= link_to post.user.name, post.user %>
+  </span>
+  <span class="timestamp">
+    <%= time_tag post.created_at %>
+  </span>
+  <span class="comments">
+    <%= link_to "комментарии(#{post.comments.count})", url_for(post) +"#comments" %>
+  </span>
+</div>
+<br style="clear: both">
