@@ -1,5 +1,18 @@
 <h1>Профиль пользователя</h1>
-<span class="gravatar"><%= gravatar_for @user %></span><br />
-<span class="user_name">Имя: <%= @user.name %></span><br />
-<span class="post_count">Постов: <%= @user.posts.count %></span><br />
-<span class="comments_count">Комментариев: <%= @user.comments.count %> </span>
+
+<div class="sidebar round">
+  <span class="gravatar"><%= gravatar_for @user %></span><br />
+  <span class="user_name">Имя: <%= @user.name %></span><br />
+  <span class="post_count">Постов: <%= @user.posts.count %></span><br />
+  <span class="comments_count">Комментариев: <%= @user.comments.count %></span>
+</div>
+
+<h2>Записи пользователя</h2>
+
+<%= will_paginate @posts %>
+
+<div class="user_posts">
+  <%= render @posts %>
+</div>
+
+<%= will_paginate @posts %>

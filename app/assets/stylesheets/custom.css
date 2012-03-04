@@ -156,3 +156,14 @@ textarea#comment_content{
     margin-left: 0.4em;
     font-size: 90%;
 }
+
+.sidebar {
+  width: 30%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ffc;
+}
+
+.user_posts{
+    margin-top: 1em;
+}
