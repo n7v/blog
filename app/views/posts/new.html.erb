@@ -2,12 +2,16 @@
 <%= form_for @post do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label "Заголовок" %><br />
+    <%= f.label :title, "Заголовок" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label "Текст" %><br />
+    <%= f.label :content, "Текст" %><br />
     <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :tags, "Теги" %><br />
+    <%= f.text_field :tags, :value => "" %>
   </div>
   <div class="actions">
     <%= f.submit "Послать" %>

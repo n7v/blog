@@ -1,8 +1,12 @@
-<h1>Список пользователей</h1>
+<h1>Все пользователи</h1>
 <%= will_paginate %>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+<% if @users.any? %>
+  <ul class="users">
+    <%= render @users %>
+  </ul>
+<% else %>
+  <span class="empty_message">Список пользователей пуст</span>
+<% end %>
 
 <%= will_paginate %>

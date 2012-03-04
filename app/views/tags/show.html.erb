@@ -1,0 +1,9 @@
+<h1>Список записей с тегом <b><%= @tag.name %></b></h1>
+
+<%= will_paginate @posts %>
+
+<div class="tag_posts">
+  <%= render @posts %>
+</div>
+
+<%= will_paginate @posts %>

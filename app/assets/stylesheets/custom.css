@@ -110,6 +110,14 @@ div.posts {
     padding: 10px;
 }
 
+.post_content{
+    border-style: solid;
+    border-width: 1px;
+    border-color: silver;
+    padding: 10px;
+    min-height: 200px;
+}
+
 .post_bar{
     padding-top: 5px;
     padding-bottom: 5px;
@@ -139,13 +147,26 @@ div.posts {
     font-weight: bold;
 }
 
-textarea#comment_content{
+textarea{
     width: 55%;
     height: 100px;
     padding: 5px;
     -moz-border-radius: 10px;
     -webkit-border-radius:  10px;
     border-radius:  10px;
+}
+
+textarea#post_content{
+    height: 200px;
+    width: 80%;
+}
+
+.field input{
+    width: 55%; 
+    -moz-border-radius: 10px;
+    -webkit-border-radius:  10px;
+    border-radius:  10px;
+    padding: 5px;
 }
 
 .comment_bar{
@@ -158,12 +179,16 @@ textarea#comment_content{
 }
 
 .sidebar {
-  width: 30%;
-  padding: 1em;
-  vertical-align: top;
-  background: #ffc;
+    width: 30%;
+    padding: 1em;
+    vertical-align: top;
+    background: #ffc;
 }
 
 .user_posts{
     margin-top: 1em;
+}
+
+#post_tag_list{
+    margin-bottom: 1em;
 }

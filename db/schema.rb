@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302105949) do
+ActiveRecord::Schema.define(:version => 20120304183133) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(:version => 20120302105949) do
 
   add_index "posts", ["user_id", "content"], :name => "index_posts_on_user_id_and_content", :unique => true
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+
+  create_table "tagrelations", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tagrelations", ["post_id", "tag_id"], :name => "index_tagrelations_on_post_id_and_tag_id", :unique => true
+  add_index "tagrelations", ["post_id"], :name => "index_tagrelations_on_post_id"
+  add_index "tagrelations", ["tag_id"], :name => "index_tagrelations_on_tag_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

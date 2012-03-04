@@ -15,8 +15,10 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post  = current_user.posts.build(params[:post])
+    @post = current_user.posts.build(params[:post])
+    @tags = params[:post][:tags] 
     if @post.save
+      @post.add_tags(@tags)
       flash[:success] = "Запись создана!"
       redirect_to root_path
     else

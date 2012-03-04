@@ -1,7 +1,7 @@
 #coding: utf-8
 
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:new]
+  before_filter :authenticate_user!, :except => [:new, :index, :show]
   
   def new
     @title = "Регистрация"
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @title = "Список пользователей"
+    @title = "Все пользователи"
     @users = User.paginate(:page => params[:page])
   end
 

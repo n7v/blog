@@ -1,9 +1,11 @@
 <h1>Все записи</h1>
 
-<%= will_paginate %>
-
-<div class="posts">
-  <%= render @posts %>
-</div>
-
-<%= will_paginate %>
+<% if @posts.any? %>
+  <%= will_paginate %>
+  <div class="posts">
+    <%= render @posts %>
+  </div>
+  <%= will_paginate %>
+<% else %>
+  <span class="empty_message">Список записей пуст</span>
+<% end %>

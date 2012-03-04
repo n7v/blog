@@ -1,4 +1,8 @@
 ru:
+  will_paginate:
+    next_label: Далее →
+    page_gap: ! '&hellip;'
+    previous_label: ← Назад
   date:
     formats:
       default: "%d.%m.%Y"

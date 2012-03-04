@@ -1,9 +1,18 @@
 <h1><%= @post.title %></h1>
-<div class="post round">
+<div class="post_content round">
   <%= raw sanitize(@post.content) %>
 </div>
 
 <%= render 'post_bar', :post => @post %>
+
+<div id="post_tag_list">
+  <% if @post.tags.any? %>
+    Теги:
+    <% @post.tags.each do |tag| %>
+      <%= link_to tag.name, tag %>
+    <% end %>
+  <% end %>
+</div>
 
 <div id = "comments">
   <%= render "shared/comment_form" %>

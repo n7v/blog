@@ -1,0 +1,13 @@
+<h1>Все теги</h1>
+
+<%= will_paginate %>
+
+<% if @tags.any? %>
+<ul class="tags">
+  <%= render @tags %>
+</ul>
+<% else %>
+<span class="empty_message">Список тегов пуст</span>
+<% end %>
+
+<%= will_paginate %>

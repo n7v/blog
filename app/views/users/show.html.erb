@@ -7,12 +7,14 @@
   <span class="comments_count">Комментариев: <%= @user.comments.count %></span>
 </div>
 
-<h2>Записи пользователя</h2>
+<% if @posts.any? %> 
+  <h2>Записи пользователя</h2>
 
-<%= will_paginate @posts %>
+  <%= will_paginate @posts %>
 
-<div class="user_posts">
-  <%= render @posts %>
-</div>
+  <div class="user_posts">
+    <%= render @posts %>
+  </div>
 
-<%= will_paginate @posts %>
+  <%= will_paginate @posts %>
+<% end %>

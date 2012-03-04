@@ -1,10 +1,10 @@
 <div class="post round">
-    <span class="title">
-      <%= link_to post.title, post %>
-    </span><br/>
-    <span class="content">
-      <%= raw post_content_cut(post.content) %>
-      <%= link_to "читать", post %>
-    </span>
+  <span class="title">
+    <%= link_to post.title, post %>
+  </span><br/>
+  <span class="content">
+    <%= raw post_content_cut(post.content) %><br/>
+    <%= link_to "читать", post %>
+  </span>
 </div>
 <%= render 'posts/post_bar', :post => post %>
