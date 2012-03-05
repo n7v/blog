@@ -4,10 +4,11 @@ module ApplicationHelper
  
   def title
     base_title = "Блог"
-    if @title.nil?
+    page_title = content_for(:title) 
+    if page_title.nil?
       base_title
     else
-      "#{base_title} | " + content_for(:title)
+      "#{base_title} | #{page_title}"
     end
   end
   

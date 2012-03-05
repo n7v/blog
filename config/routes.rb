@@ -4,7 +4,7 @@ Blog::Application.routes.draw do
   
   root :to => 'posts#index'
   
-  resources :users
+  resources :users, :only => [:show, :index]
   #resources :sessions, :only => [:new, :create, :destroy]
   resources :posts
   resources :comments, :only => [:new, :create, :destroy]
