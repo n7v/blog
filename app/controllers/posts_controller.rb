@@ -4,12 +4,10 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   
   def index
-    @title = "Все записи"
     @posts = Post.paginate(:page => params[:page])
   end
   
   def new
-    @title = "Добавление записи"
     @user = current_user
     @post = Post.new
   end
@@ -27,12 +25,10 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @title = "Удаление записи"
   end
   
   def show
     @post = Post.find(params[:id])
-    @title = @post.title
     if current_user.nil?
       @new_comment = @post.comments.new
     else

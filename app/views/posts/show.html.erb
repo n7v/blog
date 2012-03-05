@@ -1,3 +1,4 @@
+<%= content_for :title, @post.title %>
 <h1><%= @post.title %></h1>
 <div class="post_content round">
   <%= raw sanitize(@post.content) %>

@@ -7,7 +7,7 @@ module ApplicationHelper
     if @title.nil?
       base_title
     else
-      "#{base_title} | #{@title}"
+      "#{base_title} | " + content_for(:title)
     end
   end
   

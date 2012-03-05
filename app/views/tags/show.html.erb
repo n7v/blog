@@ -1,3 +1,4 @@
+<%= content_for :title, "Тег: #{@tag.name}" %>
 <h1>Список записей с тегом <b><%= @tag.name %></b></h1>
 
 <%= will_paginate @posts %>
